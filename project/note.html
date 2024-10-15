@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý khóa học</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .toolbar {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .toolbar-left {
+            display: flex;
+        }
+
+        .toolbar-left button {
+            background-color: #8BC34A;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        .toolbar-left input[type="text"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            width: 300px;
+        }
+
+        .toolbar-left input[type="button"] {
+            padding: 10px;
+            background-color: #ccc;
+            border: none;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        .toolbar-right {
+            display: flex;
+            align-items: center;
+        }
+
+        .toolbar-right select, .toolbar-right input[type="button"] {
+            padding: 10px;
+            margin-left: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        table th, table td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+
+        table th {
+            background-color: #87CEEB;
+        }
+
+        table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .action-buttons a {
+            color: white;
+            padding: 5px 10px;
+            text-decoration: none;
+        }
+
+        .edit {
+            background-color: #4CAF50;
+        }
+
+        .delete {
+            background-color: #FF5722;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .pagination button {
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            margin: 0 5px;
+            background-color: #f0f0f0;
+        }
+
+        .pagination button:hover {
+            background-color: #87CEEB;
+        }
+
+        .pagination .current-page {
+            font-weight: bold;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>QUẢN LÝ KHÓA HỌC</h2>
+
+    <!-- Thanh công cụ -->
+    <div class="toolbar">
+        <div class="toolbar-left">
+            <button>Thêm mới</button>
+            <input type="text" placeholder="Nhập từ khóa học tìm kiếm">
+            <input type="button" value="Tìm kiếm">
+        </div>
+        <div class="toolbar-right">
+            <label for="sort">Sắp xếp</label>
+            <select id="sort">
+                <option value="name">Tên khóa học</option>
+                <option value="status">Trạng thái</option>
+            </select>
+            <input type="button" value="Lựa chọn">
+        </div>
+    </div>
+
+    <!-- Bảng quản lý khóa học -->
+    <table>
+        <thead>
+            <tr>
+                <th>STT</th>
+                <th>Mã khóa học</th>
+                <th>Tên khóa học</th>
+                <th>Thời gian (giờ)</th>
+                <th>Trạng thái</th>
+                <th>Hành động</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>RA01</td>
+                <td>Khóa học 1</td>
+                <td>1000</td>
+                <td>Hoạt động</td>
+                <td class="action-buttons">
+                    <a href="#" class="edit">Sửa</a> 
+                    <a href="#" class="delete">Xóa</a>
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>RA02</td>
+                <td>Khóa học 2</td>
+                <td>2000</td>
+                <td>Không hoạt động</td>
+                <td class="action-buttons">
+                    <a href="#" class="edit">Sửa</a> 
+                    <a href="#" class="delete">Xóa</a>
+                </td>
+            </tr>
+            <!-- Thêm các dòng tương tự -->
+        </tbody>
+    </table>
+
+    <!-- Phân trang -->
+    <div class="pagination">
+        <button>Prev</button>
+        <button class="current-page">1</button>
+        <button>2</button>
+        <button>...</button>
+        <button>999</button>
+        <button>Next</button>
+    </div>
+
+</body>
+</html>
